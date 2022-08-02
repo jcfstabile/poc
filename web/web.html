@@ -31,8 +31,17 @@
       top: 0;
       right: 1%;
       width: 45%;
-      height: 98%;
+      height: 86%;
       border: 3px solid #73AD21;
+    }
+    #consola {
+      font-family: monospace;
+      position: absolute;
+      top: 89%;
+      right: 1%;
+      width: 45%;
+      height: 9%;
+      border: 1px solid coral;
     }
     </style>
     <canvas></canvas>
@@ -62,5 +71,6 @@
 
     <button class="archivo" onclick="loadFileCodeOnEditor(editor)">ejemplo.rb</button>
     <button class="run" accesskey="r" onclick="runEditorCode(editor)">Run</button>
+    <div id="consola"><div style="color: grey;">consola</div></div>
   </body>
 </html>
