@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css" media="screen">
+    #editor {
+        position: absolute;
+        top: 2%;
+        left: 0;
+        width: 45%;
+        height: 90%;
+    }
+    button.run {
+      position: absolute;
+      bottom: 1%;
+      left: 21%;
+      width: 10%;
+      height: 5%;
+      border: 1px solid coral;
+    }
+    button.archivo {
+      position: absolute;
+      bottom: 1%;
+      left: 1%;
+      width: 10%;
+      height: 5%;
+      border: 1px solid coral;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      right: 1%;
+      width: 45%;
+      height: 98%;
+      border: 3px solid #73AD21;
+    }
+    </style>
+    <canvas></canvas>
+    <script src="https://cdn.opalrb.com/opal/current/opal.js"></script>
+    <script src="https://cdn.opalrb.com/opal/current/native.js"></script>
+    <script src="canvas.js"></script>
+  </head>
+  <body>
+    <div id="editor"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/ace.min.js" integrity="sha512-IunksvjFi1CZJ59SN0Fw0dSkjMgLrY1PQ0WVPv1L3er6z1zW0AVLXs9nM2ZoEisoRo8eHDQn8FOs2KsZPwrUww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/mode-ruby.min.js" integrity="sha512-daEgUglRphZGmsOdDzLqNw/+Rj00UOIvcKEK98mlv7HEciry0z1VwoMdB6tTgmbNGKBQpPOAnXwwi9VpBpLD3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/theme-cobalt.min.js" integrity="sha512-TjedDDiCXUu5wgeSYjl1JloMqaBPVCmBQ0hZnn6SYfqaUFgkZ+zV80dP/zmkmOH+Afo/racOr4Rt4fNuHkPpyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/ext-settings_menu.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/keybinding-vim.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+      const editor = ace.edit("editor");
+      editor.setTheme("ace/theme/cobalt");
+      editor.session.setMode("ace/mode/ruby");
+      editor.accesskey = 'e';
+    </script>
+    <script>
+      editor.setValue("puts '@@@'\nputs Object.constants\nputs '###'\nputs gw.methods\nputs '%%%'\n");
+    </script>
+
+
+    <button class="archivo" onclick="loadFileCodeOnEditor(editor)">ejemplo.rb</button>
+    <button class="run" accesskey="r" onclick="runEditorCode(editor)">Run</button>
+  </body>
+</html>
