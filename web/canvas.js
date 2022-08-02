@@ -3,8 +3,6 @@ canvas.width = 500;
 canvas.height = 500;
 ctx = canvas.getContext('2d')
 
-// TODO capture and show inside a box
-// https://stackoverflow.com/a/11403146
 
 class Gw{
   constructor(){
@@ -42,7 +40,7 @@ class Gw{
   }
 
   drawAll(){
-    console.log('go', this.objs);
+    console.info('go', this.objs);
     this.clearCanvas();
     this.objs.forEach(obj => obj.$drawImage());
   }
@@ -76,9 +74,9 @@ class Control{
         this.obj.$control();
         break;
     }
-    console.log(event.code);
+    console.info(event.code);
     // event.preventDefault()
-    console.log('requesting');
+    console.info('requesting');
     requestAnimationFrame(animate);
 
   }
@@ -162,14 +160,29 @@ const runCode = () => {
   try{
     Opal.eval(rubyInit + rubyEditorCode)
   } catch(e) {
-    console.log(e);
+    console.log(e); // quiero el error en la consola del front
     alert(e);
   }
-  console.log('First animate() call');
+  console.info('First animate() call');
   animate();
 }
 
 function animate(){
   gw.drawAll();
 }
+
+
+// TODO capture and show inside a box
+// https://stackoverflow.com/a/11403146
+// Ojo! estando aqui abajo funciona el teclado en el canvas,
+// En otro caso puede no funcionar.
+window.onload = (function(){
+    const oldLog = console.log;
+    const consola = document.getElementById('consola');
+    console.log = function (message) {
+      consola.innerHTML = message;
+      // consola.innerHTML = consola.innerHTML + message;
+      oldLog.apply(console, arguments);
+    };
+});
 
