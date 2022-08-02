@@ -1,12 +1,9 @@
 class Personaje
   include MGame
-  def initialize(color, posicion)
+  def initialize(imageName, posicion)
     super
-    # @color = color
     @posicion = posicion
-    # $gw.subscribe(self)
-    # $gw.controlRight(self)
-    @imageName = 'RickFront.png';
+    @imageName = imageName
   end
 
   # def draw
@@ -38,6 +35,6 @@ class Personaje
 end
 
 
-a = Personaje.new('blue', Posicion.new(10,10))
+a = Personaje.new('RickFront.png', Posicion.new(10,10))
 # b = Personaje.new('lightblue', Posicion.new(100,100))
 
