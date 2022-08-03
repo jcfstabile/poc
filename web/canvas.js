@@ -122,7 +122,7 @@ const readFile = file => {
   oReq.addEventListener("load", ()=>{})
   oReq.open("GET", file, false); // false -> synchronously
   oReq.setRequestHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-  oReq.send();
+  try { oReq.send(); } catch(e) { alert(e); }
   return oReq.responseText;
 };
 
