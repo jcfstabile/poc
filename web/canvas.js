@@ -3,6 +3,7 @@ canvas.width = 500;
 canvas.height = 500;
 ctx = canvas.getContext('2d')
 
+const consolaBuffer = [];
 
 class Gw{
   constructor(){
@@ -176,13 +177,18 @@ function animate(){
 // https://stackoverflow.com/a/11403146
 // Ojo! estando aqui abajo funciona el teclado en el canvas,
 // En otro caso puede no funcionar.
+//
+// Calculo de fontSize
+// https://stackoverflow.com/a/15195345
 window.onload = (function(){
-    const oldLog = console.log;
-    const consola = document.getElementById('consola');
-    console.log = function (message) {
-      consola.innerHTML = message;
-      // consola.innerHTML = consola.innerHTML + message;
-      oldLog.apply(console, arguments);
-    };
+  const oldLog = console.log;
+  const consola = document.getElementById('consola');
+  const fontSize = parseFloat(window.getComputedStyle(consola, null).fontSize);
+  const lineHeight= Math.ceil(fontSize * 1.2); // asumiendo line-height: normal
+  console.log = function (message) {
+    consola.innerHTML = consola.innerHTML + '<br>' + message
+    consola.scrollTop += lineHeight;
+    oldLog.apply(console, arguments);
+  };
 });
 
