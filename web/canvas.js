@@ -1,4 +1,4 @@
-canvas = document.querySelector('canvas')
+canvas = document.querySelector('canvas');
 canvas.width = 500;
 canvas.height = 500;
 ctx = canvas.getContext('2d')
@@ -32,6 +32,7 @@ class Gw{
   }
 
 // https://stackoverflow.com/a/6776055
+  // TODO make this synchronic???
   drawImage(fileName, x, y){
     const img = new Image();
     img.src = fileName;
@@ -118,6 +119,8 @@ class LeftControl extends Control{
 // TODO
 // https://stackoverflow.com/questions/3582671/how-to-open-a-local-disk-file-with-javascript
 // https://stackoverflow.com/a/26298948
+
+
 const readFile = file => {
   const oReq = new XMLHttpRequest();
   oReq.addEventListener("load", ()=>{})
@@ -135,6 +138,10 @@ let rubyEditorCode;
 const readEditorCode = editor => {
   rubyEditorCode = editor.getValue();
 }
+
+const loadLocalFileCodeOnEditor = editor => {
+  readLocalFile(editor);
+};
 
 const loadFileCodeOnEditor = editor => {
   editor.setValue(readFile("ejemplo.rb"));
