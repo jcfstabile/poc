@@ -1,3 +1,4 @@
+echo Grabing CDNs
 cd web
 wget "https://cdn.opalrb.com/opal/current/opal.js"
 wget "https://cdn.opalrb.com/opal/current/native.js"
