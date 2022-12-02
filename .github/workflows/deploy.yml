@@ -7,8 +7,10 @@ jobs:
         name: Deploy job
         runs-on: ubuntu-latest
         steps:
-            - name: Go dir
+            - name: Show workin dir
               run: pwd
+            - name: Show files here
+              run: ls
             - name: Grab CDNs
               run: ./grab.sh
             - name: Deploy modern-education.surge.sh
