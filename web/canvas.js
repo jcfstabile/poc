@@ -1,3 +1,4 @@
+console.log("loading canvas.js");
 canvas = document.querySelector('canvas');
 canvas.width = 500;
 canvas.height = 500;
@@ -147,10 +148,16 @@ const loadFileCodeOnEditor = editor => {
   editor.setValue(readFile("ejemplo.rb"));
 };
 
+
 const runEditorCode = editor => {
   gw = new Gw();
+
+  showExecuting();
+
   readEditorCode(editor);
   runCode();
+
+  showDone();
 };
 
 // To handle errors on editor check
@@ -171,8 +178,7 @@ const runCode = () => {
     console.log(e); // quiero el error en la consola del front
     alert(e);
   }
-  console.info('First animate() call');
-  animate();
+  // animate();
 }
 
 function animate(){

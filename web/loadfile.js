@@ -1,3 +1,4 @@
+console.log("loading loadfile.js");
 input = document.querySelector('input');
 input.addEventListener('change', () => {
   const file = input.files[0];
