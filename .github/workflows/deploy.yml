@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Grab CDNs
-              run: ./grab.sh; cd web
+              run: ./grab.sh
             - name: Deploy modern-education.surge.sh
               uses: dswistowski/surge-sh-action@v1
               with:
