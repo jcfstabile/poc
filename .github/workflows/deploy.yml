@@ -13,6 +13,6 @@ jobs:
               uses: dswistowski/surge-sh-action@v1
               with:
                   domain: 'modern-education.surge.sh'
-                  project: 'web'
+                  project: '.'
                   login: ${{ secrets.surge_login }}
                   token: ${{ secrets.surge_token }}
