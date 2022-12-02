@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo Grabing needed CDNs
 
 function loadCDN(){
