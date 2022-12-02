@@ -5,6 +5,7 @@
     <style type="text/css" media="screen">
     #editor {
         position: absolute;
+        font-size: 22px;
         top: 2%;
         left: 1%;
         width: 47%;
@@ -16,17 +17,17 @@
       top: 2%;
       right: 1%;
       width: 47%;
-      height: 86%;
+      height: 48%;
       border: 1px solid black;
     }
     #consola {
       font-family: Courier;
-      font-size: 9px;
+      font-size: 22px;
       position: absolute;
-      top: 89%;
+      top: 51%;
       right: 1%;
       width: 47%;
-      height: 9%;
+      height: 48%;
       border: 1px solid black;
       overflow: scroll;
     }
@@ -56,11 +57,22 @@
       border: 1px solid coral;
     }
 
+    button.keybinding {
+      position: absolute;
+      bottom: 1%;
+      left: 34%;
+      width: 10%;
+      height: 5%;
+      border: 1px solid coral;
+    }
+
     </style>
     <canvas></canvas>
     <input id="input" type="file" accept=".rb" style="display: none">
     <script src="opal.js"></script>
     <script src="native.js"></script>
+
+    <!-- owr files -->
     <script src="loadfile.js"></script>
     <script src="canvas.js"></script>
   </head>
@@ -77,17 +89,19 @@
       const editor = ace.edit("editor");
       editor.setTheme("ace/theme/cobalt");
       editor.session.setMode("ace/mode/ruby");
-      editor.accesskey = 'e';
     </script>
     <script>
       editor.setValue("puts '@@@'\nputs Object.constants\nputs '###'\nputs gw.methods\nputs '%%%'\n");
     </script>
+    <script src="toggleKeyBinding.js"></script>
 
     <button class="archivo" onclick="loadFileCodeOnEditor(editor)">ejemplo.rb</button>
 
     <button id="load" class="load" onclick="loadLocalFileCodeOnEditor(editor)">load</button>
 
     <button class="run" accesskey="r" onclick="runEditorCode(editor)">Run</button>
+    <button class="keybinding" accesskey="k" onclick="toggleKeyBinding()">KB</button>
+
     <div id="consola"><div style="color: grey;">consola</div></div>
   </body>
 </html>
