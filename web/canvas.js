@@ -175,6 +175,7 @@ const runCode = () => {
   try{
     Opal.eval(rubyInit + rubyEditorCode)
   } catch(e) {
+      // https://stackoverflow.com/questions/32551916/get-the-error-line-in-a-ruby-opal-code
     console.log(e); // quiero el error en la consola del front
     alert(e);
   }
