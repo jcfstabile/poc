@@ -1,21 +1,23 @@
 #!/bin/bash
 
+source versions.sh
+
 echo Grabing needed CDNs
 
-function loadCDN(){
+function grabCDN(){
     url=$1;
-    if [ ! -f "${url##*/}" ]; then
+    if [ ! -f "${url##*/}" ]; then # grab if file do not exist (no matter which version
         wget "$1";
     fi
 }
 
 cd web
-loadCDN "https://cdn.opalrb.com/opal/current/opal.js"
-loadCDN "https://cdn.opalrb.com/opal/current/native.js"
+grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal.js"
+grabCDN "https://cdn.opalrb.com/opal/${opal_version}/native.js"
 
-loadCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/ace.min.js"
-loadCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/mode-ruby.min.js"
-loadCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/theme-cobalt.min.js"
-loadCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/ext-settings_menu.min.js"
-loadCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/keybinding-vim.min.js"
+grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/ace.min.js"
+grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/mode-ruby.min.js"
+grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/theme-cobalt.min.js"
+grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/ext-settings_menu.min.js"
+grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/keybinding-vim.min.js"
 cd ..
