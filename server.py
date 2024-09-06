@@ -2,6 +2,7 @@
 # from https://stackoverflow.com/a/21957017
 from http.server import HTTPServer, SimpleHTTPRequestHandler, test
 import sys
+import signal
 
 class CORSRequestHandler (SimpleHTTPRequestHandler):
     def end_headers (self):
@@ -11,5 +12,12 @@ class CORSRequestHandler (SimpleHTTPRequestHandler):
         self.send_header('Expires', '0')
         SimpleHTTPRequestHandler.end_headers(self)
 
+def interrupt_handler(sig, frame):
+    print('Exiting from server')
+    sys.exit(0)
+
 if __name__ == '__main__':
+    signal.signal(signal.SIGINT, interrupt_handler)
+    signal.signal(signal.SIGTERM, interrupt_handler)
+
     test(CORSRequestHandler, HTTPServer, port=int(sys.argv[1]) if len(sys.argv) > 1 else 8000)
