@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source versions.sh
+source "../versions.sh"
 
 echo Grabing needed CDNs
 
@@ -13,6 +13,7 @@ function grabCDN(){
 
 cd web
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal.js"
+grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal-parser.js"
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/native.js"
 
 grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/ace.min.js"

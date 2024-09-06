@@ -5,3 +5,4 @@ web/theme-cobalt.min.js*
 web/mode-ruby.min.js*
 web/native.js*
 web/opal.js*
+web/opal-parser.js

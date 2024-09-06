@@ -1,4 +1,18 @@
 console.log("loading canvas.js");
+
+const requireOpalParser = () => {
+  const r = new XMLHttpRequest();
+  r.open("GET", 'opal-parser.js', false);
+  r.send('');
+  libcode = r.responseText;
+
+  (new Function('Opal', libcode))(Opal);
+
+  Opal.require('opal-parser');
+}
+
+requireOpalParser();
+
 canvas = document.querySelector('canvas');
 canvas.width = 500;
 canvas.height = 500;
