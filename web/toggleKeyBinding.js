@@ -5,10 +5,10 @@ var kbh = def;
 const toggleKeyBinding = () => {
   kbh = kbh === vim ? def : vim;
   editor.setKeyboardHandler(kbh);
-  if(kbh === vim){
-    showDone();
-  } else {
-    showExecuting();
-  }
+  // if(kbh === vim){
+  //   showDone();
+  // } else {
+  //   showExecuting();
+  // }
 }
 

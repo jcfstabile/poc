@@ -166,12 +166,12 @@ const loadFileCodeOnEditor = editor => {
 const runEditorCode = editor => {
   gw = new Gw();
 
-  showExecuting();
+  // showExecuting();
 
   readEditorCode(editor);
   runCode();
 
-  showDone();
+  // showDone();
 };
 
 // To handle errors on editor check
