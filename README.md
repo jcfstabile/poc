@@ -20,3 +20,7 @@ To publish on surge.sh, install with:
 
 
 
+#### refs
+
+Doc to see [about aseprite](https://github.com/aseprite/aseprite/blob/main/INSTALL.md)
+
