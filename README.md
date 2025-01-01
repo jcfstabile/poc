@@ -24,3 +24,7 @@ To publish on surge.sh, install with:
 
 Doc to see [about aseprite](https://github.com/aseprite/aseprite/blob/main/INSTALL.md)
 
+FamiStudio [about famistudio](https://famistudio.org/)
+
+FamiStudio Tuto [tuto famistudio](https://www.youtube.com/watch?v=46jjM9c36ZE)
+
