@@ -11,7 +11,8 @@ function grabCDN(){
     fi
 }
 
-cd web
+# prec: running on web directory
+# cd web
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal.js"
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal-parser.js"
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/native.js"
@@ -21,4 +22,4 @@ grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/mode-ruby.min
 grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/theme-cobalt.min.js"
 grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/ext-settings_menu.min.js"
 grabCDN "https://cdnjs.cloudflare.com/ajax/libs/ace/${ace_version}/keybinding-vim.min.js"
-cd ..
+# cd ..
