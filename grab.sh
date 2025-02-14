@@ -1,6 +1,8 @@
 #!/bin/bash
+# prec: running on web directory
+# (1)
 
-source "../versions.sh"
+source "../versions"
 
 echo Grabing needed CDNs
 
@@ -11,7 +13,7 @@ function grabCDN(){
     fi
 }
 
-# prec: running on web directory
+# (1) 
 # cd web
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal.js"
 grabCDN "https://cdn.opalrb.com/opal/${opal_version}/opal-parser.js"
