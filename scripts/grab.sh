@@ -2,7 +2,7 @@
 # prec: running on web directory
 # (1)
 
-source "../versions"
+source "../scripts/versions"
 
 echo Grabing needed CDNs
 
