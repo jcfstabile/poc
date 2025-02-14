@@ -18,7 +18,11 @@ To publish on surge.sh, install with:
 
 `npm install --global surge`
 
+### Operation
 
+#### Run
+
+bash run.sh
 
 #### refs
 
