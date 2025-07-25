@@ -32,3 +32,4 @@ FamiStudio [about famistudio](https://famistudio.org/)
 
 FamiStudio Tuto [tuto famistudio](https://www.youtube.com/watch?v=46jjM9c36ZE)
 
+## NOW using to devel: Cursor Appimage from ~/Download
